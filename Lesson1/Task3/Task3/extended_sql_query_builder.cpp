@@ -10,7 +10,7 @@ namespace query_builders
 	ExtendedSqlSelectQueryBuilder& ExtendedSqlSelectQueryBuilder::addColumn(
 		const std::string& col_name)
 	{
-		cols_names.push_back(col_name);
+		SqlSelectQueryBuilder::addColumn(col_name);
 		return *this;
 	}
 
@@ -18,7 +18,7 @@ namespace query_builders
 	ExtendedSqlSelectQueryBuilder& ExtendedSqlSelectQueryBuilder::addColumns(
 		const std::vector<std::string>& columns) noexcept
 	{
-		cols_names.insert(cols_names.end(), columns.begin(), columns.end());
+		SqlSelectQueryBuilder::addColumns(columns);
 		return *this;
 	}
 
@@ -26,7 +26,7 @@ namespace query_builders
 	ExtendedSqlSelectQueryBuilder& ExtendedSqlSelectQueryBuilder::addFrom(
 		const std::string& table_name)
 	{
-		from_table = table_name;
+		SqlSelectQueryBuilder::addFrom(table_name);
 		return *this;
 	}
 
